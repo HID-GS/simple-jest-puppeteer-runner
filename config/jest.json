@@ -4,7 +4,7 @@
     {
       "displayName": "jest-puppeteer",
       "runner": "jest-puppeteer",
-      "testMatch": ["**/test/puppeteer/**/*.test.js
+      "testMatch": ["**/test/puppeteer/**/*.js
       ]
     }
 }
