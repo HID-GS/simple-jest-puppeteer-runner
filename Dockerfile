@@ -18,7 +18,7 @@ RUN apt-get update \
 ENV NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
 
 RUN npm -g i puppeteer --unsafe-perm=true \
-    && npm -g i jest
+    && npm -g i jest jest-puppeteer
 
 COPY ./config /config
 
