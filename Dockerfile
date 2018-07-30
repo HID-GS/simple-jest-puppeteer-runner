@@ -20,6 +20,8 @@ ENV NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
 RUN npm -g i puppeteer --unsafe-perm=true \
     && npm -g i jest
 
+COPY ./config /config
+
 WORKDIR /app
 
 #ENTRYPOINT ['node']
