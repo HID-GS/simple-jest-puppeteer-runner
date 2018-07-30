@@ -1,4 +1,5 @@
 FROM node:slim
+
 RUN apt-get update \
     && apt-get install -y vim \
     && apt-get install -y xvfb \
@@ -16,15 +17,23 @@ RUN apt-get update \
     && apt-get install -y libgtk-3-0
 
 ENV NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
+ENV PATH="/usr/local/bin:$PATH"
 
 RUN npm -g i puppeteer --unsafe-perm=true \
     && npm -g i jest jest-puppeteer
 
-COPY ./config /config
+RUN useradd -d /jest -m -s /bin/bash jest \
+    && mkdir -p /app /reports /jest \
+    && cd /jest \
+    && npm init -y \
+    && npm i -D jest-puppeteer \
+    && chown -R jest /app /reports /jest
 
-WORKDIR /app
+COPY ./config/*.js /jest/
 
-#ENTRYPOINT ['node']
+WORKDIR /jest
 
-#CMD ['/app/index.js']
+USER jest
+
+CMD ['jest']
 
