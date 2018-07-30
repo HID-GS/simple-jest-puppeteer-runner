@@ -1,0 +1,10 @@
+{
+  "preset": "jest-puppeteer",
+  "projects": [
+    {
+      "displayName": "jest-puppeteer",
+      "runner": "jest-puppeteer",
+      "testMatch": ["**/test/puppeteer/**/*.test.js
+      ]
+    }
+}
