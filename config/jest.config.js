@@ -3,6 +3,7 @@ module.exports = {
   // ...
   "preset": "jest-puppeteer",
   "rootDir": "/app",
+  "verbose": true,
   "projects": [
     {
       "displayName": "jest-puppeteer",
