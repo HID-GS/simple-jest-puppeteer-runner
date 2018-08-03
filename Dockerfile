@@ -35,5 +35,5 @@ WORKDIR /jest
 
 USER jest
 
-CMD ['jest']
+CMD ["jest"]
 
